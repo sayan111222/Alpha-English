@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Vocabulary Practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>English Pronunciation and Vocabulary Practice</h1>
+        <div class="nav">
+            <button onclick="StartTest()">Start Test</button>
+            <button onclick="startPractice()">Practice</button>
+            <button onclick="viewProgress()">View Progress</button>
+        </div>
+        <div id="quiz-section" style="display:none;">
+            <h2 id="question"></h2>
+            <div id="options">
+                <button class="option"></button>
+                <button class="option"></button>
+                <button class="option"></button>
+                <button class="option"></button>
+            </div>
+            <p id="feedback"></p>
+        </div>
+        <div id="practice-section" style="display:none;">
+            <h2 id="practice-word"></h2>
+            <p id="practice-meaning"></p>
+            <p id="practice-pronunciation"></p>
+            <button onclick="nextWord()">Next Word</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
