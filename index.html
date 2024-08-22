@@ -28,16 +28,24 @@
             <h2 id="practice-word"></h2>
             <p id="practice-meaning"></p>
             <p id="practice-pronunciation"></p>
+            <button onclick="previousWord()">Previous Word</button>
             <button onclick="nextWord()">Next Word</button>
-</div>
+        </div>
     </div>
-     <!-- Footer with founder details -->
-     <footer>
-        <p>This website created by : <strong>Sayan Mondal</strong></p>
+    <!-- Footer with founder details -->
+    <footer>
+        <p>This website created by: <strong>Sayan Mondal</strong></p>
         <p>From: <strong>Kolkata, India</strong></p>
         <p>Instagram: <a href="https://www.instagram.com/sayan____03" target="_blank">@sayan____03</a></p>
+        <!-- Feedback details -->
+        <div class="feedback-container">
+            <h2>Like Our Website?</h2>
+            <div class="like-container">
+                <button id="like-button">👍 Like</button>
+                <p>Total Likes: <span id="total-likes">0</span></p>
+            </div>
+        </div>
     </footer>
-    <p id="timer"></p>
     <script src="script.js"></script>
 </body>
 </html>
