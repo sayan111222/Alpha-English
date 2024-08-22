@@ -1,133 +1,127 @@
-let words = [
-  // Personal Pronouns
-  { "word": "I", "meaning": "আমি", "pronunciation": "আমি" },
-  { "word": "you", "meaning": "তুমি", "pronunciation": "তুমি" },
-  { "word": "he", "meaning": "সে (ছেলে)", "pronunciation": "সে" },
-  { "word": "she", "meaning": "সে (মেয়ে)", "pronunciation": "সে" },
-  { "word": "it", "meaning": "এটি", "pronunciation": "ইট" },
-  { "word": "we", "meaning": "আমরা", "pronunciation": "আমরা" },
-  { "word": "they", "meaning": "তারা", "pronunciation": "দে" },
-
-  // Object Pronouns
-  { "word": "me", "meaning": "আমাকে", "pronunciation": "মি" },
-  { "word": "him", "meaning": "তাকে (ছেলে)", "pronunciation": "হিম" },
-  { "word": "her", "meaning": "তাকে (মেয়ে)", "pronunciation": "হার" },
-  { "word": "us", "meaning": "আমাদের", "pronunciation": "আস" },
-  { "word": "them", "meaning": "তাদের", "pronunciation": "দেম" },
-
-  // Possessive Pronouns
-  { "word": "my", "meaning": "আমার", "pronunciation": "মাই" },
-  { "word": "your", "meaning": "তোমার", "pronunciation": "ইউর" },
-  { "word": "his", "meaning": "তার (ছেলে)", "pronunciation": "হিজ" },
-  { "word": "her", "meaning": "তার (মেয়ে)", "pronunciation": "হার" },
-  { "word": "its", "meaning": "এর", "pronunciation": "ইটস" },
-  { "word": "our", "meaning": "আমাদের", "pronunciation": "আওয়ার" },
-  { "word": "their", "meaning": "তাদের", "pronunciation": "দেয়ার" },
-
-  // Reflexive Pronouns
-  { "word": "myself", "meaning": "নিজে", "pronunciation": "মাইসেল্ফ" },
-  { "word": "yourself", "meaning": "নিজেকে", "pronunciation": "ইউরসেল্ফ" },
-  { "word": "himself", "meaning": "নিজে (ছেলে)", "pronunciation": "হিমসেল্ফ" },
-  { "word": "herself", "meaning": "নিজে (মেয়ে)", "pronunciation": "হারসেল্ফ" },
-  { "word": "itself", "meaning": "নিজেই", "pronunciation": "ইটসেল্ফ" },
-  { "word": "ourselves", "meaning": "নিজেদের", "pronunciation": "আওয়ারসেল্ভস" },
-  { "word": "themselves", "meaning": "নিজেদের", "pronunciation": "দেমসেল্ভস" },
-
-  // Demonstrative Pronouns
-  { "word": "this", "meaning": "এটা", "pronunciation": "দিস" },
-  { "word": "that", "meaning": "ওটা", "pronunciation": "দ্যাট" },
-  { "word": "these", "meaning": "এগুলি", "pronunciation": "দিজ" },
-  { "word": "those", "meaning": "ওগুলি", "pronunciation": "দোজ" },
-
-  // Indefinite Pronouns
-  { "word": "someone", "meaning": "কেউ একজন", "pronunciation": "সামওয়ান" },
-  { "word": "something", "meaning": "কিছু", "pronunciation": "সামথিং" },
-  { "word": "anyone", "meaning": "যে কেউ", "pronunciation": "এনিওয়ান" },
-  { "word": "anything", "meaning": "কিছুই", "pronunciation": "এনিথিং" },
-  { "word": "everyone", "meaning": "সবাই", "pronunciation": "এভ্রিওয়ান" },
-  { "word": "everything", "meaning": "সবকিছু", "pronunciation": "এভ্রিথিং" },
-  { "word": "nobody", "meaning": "কেউ না", "pronunciation": "নোবডি" },
-  { "word": "nothing", "meaning": "কিছুই না", "pronunciation": "নাথিং" },
-
-  // Possessive Pronouns (Stand-Alone)
-  { "word": "mine", "meaning": "আমারটা", "pronunciation": "মাইন" },
-  { "word": "yours", "meaning": "তোমারটা", "pronunciation": "ইউর্স" },
-  { "word": "his", "meaning": "তার (ছেলের)", "pronunciation": "হিজ" },
-  { "word": "hers", "meaning": "তার (মেয়ের)", "pronunciation": "হারস" },
-  { "word": "ours", "meaning": "আমাদেরটা", "pronunciation": "আওয়ার্স" },
-  { "word": "theirs", "meaning": "তাদেরটা", "pronunciation": "দেয়ারস" },
-
-  // Reciprocal Pronouns
-  { "word": "each other", "meaning": "এক অন্যকে", "pronunciation": "ইচ আদার" },
-  { "word": "one another", "meaning": "একে অপরকে", "pronunciation": "ওয়ান অ্যানাদার" },
-
-  // Relative Pronouns
-  { "word": "who", "meaning": "কে", "pronunciation": "হু" },
-  { "word": "whom", "meaning": "যাকে", "pronunciation": "হুম" },
-  { "word": "whose", "meaning": "কার", "pronunciation": "হুজ" },
-  { "word": "which", "meaning": "যেটি", "pronunciation": "হুইচ" },
-  { "word": "that", "meaning": "যে", "pronunciation": "দ্যাট" },
-
-  // Interrogative Pronouns
-  { "word": "who", "meaning": "কে", "pronunciation": "হু" },
-  { "word": "whom", "meaning": "কাকে", "pronunciation": "হুম" },
-  { "word": "whose", "meaning": "কার", "pronunciation": "হুজ" },
-  { "word": "which", "meaning": "কোনটা", "pronunciation": "হুইচ" },
-  { "word": "what", "meaning": "কি", "pronunciation": "হোয়াট" },
-
-  // Distributive Pronouns
-  { "word": "each", "meaning": "প্রতিটি", "pronunciation": "ইচ" },
-  { "word": "either", "meaning": "উভয়", "pronunciation": "আইদার" },
-  { "word": "neither", "meaning": "কোনোটাই না", "pronunciation": "নাইদার" },
-
-  // Quantitative Pronouns
-  { "word": "all", "meaning": "সব", "pronunciation": "অল" },
-  { "word": "few", "meaning": "কিছু", "pronunciation": "ফিউ" },
-  { "word": "many", "meaning": "অনেক", "pronunciation": "ম্যানি" },
-  { "word": "some", "meaning": "কিছু", "pronunciation": "সাম" },
-  { "word": "most", "meaning": "অধিকাংশ", "pronunciation": "মোস্ট" }
-  // Add more words here
+let words = [ 
+    { "word": "apple", "meaning": "আপেল", "pronunciation": "অ্যাপল" },
+    { "word": "ball", "meaning": "বল", "pronunciation": "বল" },
+    { "word": "cat", "meaning": "বিড়াল", "pronunciation": "ক্যাট" },
+    { "word": "dog", "meaning": "কুকুর", "pronunciation": "ডগ" },
+    { "word": "elephant", "meaning": "হাতি", "pronunciation": "এলিফ্যান্ট" },
+    { "word": "fish", "meaning": "মাছ", "pronunciation": "ফিশ" },
+    { "word": "goat", "meaning": "ছাগল", "pronunciation": "গোট" },
+    { "word": "hat", "meaning": "টুপি", "pronunciation": "হ্যাট" },
+    { "word": "ice", "meaning": "বরফ", "pronunciation": "আইস" },
+    { "word": "jug", "meaning": "জগ", "pronunciation": "জগ" },
+    { "word": "kite", "meaning": "ঘুড়ি", "pronunciation": "কাইট" },
+    { "word": "lion", "meaning": "সিংহ", "pronunciation": "লায়ন" },
+    { "word": "monkey", "meaning": "বানর", "pronunciation": "মাঙ্কি" },
+    { "word": "nest", "meaning": "বাসা", "pronunciation": "নেস্ট" },
+    { "word": "orange", "meaning": "কমলা", "pronunciation": "অরেঞ্জ" },
+    { "word": "parrot", "meaning": "তোতাপাখি", "pronunciation": "প্যারট" },
+    { "word": "queen", "meaning": "রাণী", "pronunciation": "কুইন" },
+    { "word": "rat", "meaning": "ইঁদুর", "pronunciation": "র্যাট" },
+    { "word": "sun", "meaning": "সূর্য", "pronunciation": "সান" },
+    { "word": "tiger", "meaning": "বাঘ", "pronunciation": "টাইগার" },
+    { "word": "umbrella", "meaning": "ছাতা", "pronunciation": "আমব্রেলা" },
+    { "word": "vase", "meaning": "ফুলদানি", "pronunciation": "ভাস" },
+    { "word": "watch", "meaning": "ঘড়ি", "pronunciation": "ওয়াচ" },
+    { "word": "xylophone", "meaning": "জাইলোফোন", "pronunciation": "জাইলোফোন" },
+    { "word": "yak", "meaning": "যাক", "pronunciation": "ইয়াক" },
+    { "word": "zebra", "meaning": "জেব্রা", "pronunciation": "জেব্রা" },
+    { "word": "I", "meaning": "আমি", "pronunciation": "আই" },
+    { "word": "you", "meaning": "তুমি", "pronunciation": "ইউ" },
+    { "word": "he", "meaning": "সে (ছেলে)", "pronunciation": "হি" },
+    { "word": "she", "meaning": "সে (মেয়ে)", "pronunciation": "শি" },
+    { "word": "it", "meaning": "এটি", "pronunciation": "ইট" },
+    { "word": "we", "meaning": "আমরা", "pronunciation": "উই" },
+    { "word": "they", "meaning": "তারা", "pronunciation": "দে" },
+    { "word": "me", "meaning": "আমাকে", "pronunciation": "মি" },
+    { "word": "him", "meaning": "তাকে (ছেলে)", "pronunciation": "হিম" },
+    { "word": "her", "meaning": "তাকে (মেয়ে)", "pronunciation": "হার" },
+    { "word": "us", "meaning": "আমাদের", "pronunciation": "আস" },
+    { "word": "them", "meaning": "তাদের", "pronunciation": "দেম" },
+    { "word": "happiness", "meaning": "সুখ", "pronunciation": "হ্যাপিনেস" },
+    { "word": "love", "meaning": "ভালবাসা", "pronunciation": "লাভ" },
+    { "word": "anger", "meaning": "রাগ", "pronunciation": "অ্যাংগার" },
+    { "word": "freedom", "meaning": "স্বাধীনতা", "pronunciation": "ফ্রিডম" },
+    { "word": "justice", "meaning": "ন্যায়বিচার", "pronunciation": "জাস্টিস" },
+    { "word": "beauty", "meaning": "সৌন্দর্য", "pronunciation": "বিউটি" },
+    { "word": "fear", "meaning": "ভয়", "pronunciation": "ফিয়ার" },
+    { "word": "courage", "meaning": "সাহস", "pronunciation": "কারেজ" },
+    { "word": "honesty", "meaning": "সততা", "pronunciation": "অনেস্টি" },
+    { "word": "friendship", "meaning": "বন্ধুত্ব", "pronunciation": "ফ্রেন্ডশিপ" },
+    { "word": "faith", "meaning": "বিশ্বাস", "pronunciation": "ফেইথ" },
+    { "word": "knowledge", "meaning": "জ্ঞান", "pronunciation": "নলেজ" },
+    { "word": "pain", "meaning": "ব্যথা", "pronunciation": "পেইন" },
+    { "word": "truth", "meaning": "সত্য", "pronunciation": "ট্রুথ" },
+    { "word": "kindness", "meaning": "দয়া", "pronunciation": "কাইন্ডনেস" },
+    { "word": "patience", "meaning": "ধৈর্য", "pronunciation": "পেশেন্স" },
+    { "word": "run", "meaning": "দৌড়ানো", "pronunciation": "রান" },
+    { "word": "eat", "meaning": "খাওয়া", "pronunciation": "ইট" },
+    { "word": "sleep", "meaning": "ঘুমানো", "pronunciation": "স্লিপ" },
+    { "word": "speak", "meaning": "কথা বলা", "pronunciation": "স্পিক" },
+    { "word": "write", "meaning": "লেখা", "pronunciation": "রাইট" },
+    { "word": "read", "meaning": "পড়া", "pronunciation": "রিড" },
+    { "word": "sing", "meaning": "গাওয়া", "pronunciation": "সিং" },
+    { "word": "drink", "meaning": "পান করা", "pronunciation": "ড্রিংক" },
+    { "word": "dance", "meaning": "নাচা", "pronunciation": "ডান্স" },
+    { "word": "listen", "meaning": "শোনা", "pronunciation": "লিসেন" },
+    { "word": "think", "meaning": "ভাবা", "pronunciation": "থিঙ্ক" },
+    { "word": "see", "meaning": "দেখা", "pronunciation": "সি" },
+    { "word": "buy", "meaning": "কেনা", "pronunciation": "বাই" },
+    { "word": "teach", "meaning": "শিক্ষা দেওয়া", "pronunciation": "টিচ" },
+    { "word": "learn", "meaning": "শেখা", "pronunciation": "লার্ন" },
+    { "word": "give", "meaning": "দেওয়া", "pronunciation": "গিভ" },
+    { "word": "take", "meaning": "নেওয়া", "pronunciation": "টেক" },
+    { "word": "call", "meaning": "ডাকা", "pronunciation": "কল" },
+    { "word": "run", "meaning": "দৌড়ানো", "pronunciation": "রান" },
+    { "word": "quickly", "meaning": "দ্রুত", "pronunciation": "কুইকলি" },
+    { "word": "slowly", "meaning": "ধীরে", "pronunciation": "স্লোলি" },
+    { "word": "silently", "meaning": "নিঃশব্দে", "pronunciation": "সাইলেন্টলি" },
+    { "word": "happily", "meaning": "খুশিতে", "pronunciation": "হ্যাপিলি" },
+    { "word": "angrily", "meaning": "রাগের সাথে", "pronunciation": "অ্যাংগ্রিলি" },
+    { "word": "easily", "meaning": "সহজে", "pronunciation": "ইজিলি" },
+    { "word": "sadly", "meaning": "দুঃখের সাথে", "pronunciation": "স্যাডলি" },
+    { "word": "quietly", "meaning": "শান্তভাবে", "pronunciation": "কুয়ায়েটলি" },
+    { "word": "loudly", "meaning": "জোরে", "pronunciation": "লাউডলি" },
+    { "word": "badly", "meaning": "খারাপভাবে", "pronunciation": "ব্যাডলি" },
+    { "word": "carefully", "meaning": "সাবধানে", "pronunciation": "কেয়ারফুলি" },
+    { "word": "beautifully", "meaning": "সুন্দরভাবে", "pronunciation": "বিউটিফুলি" },
+    { "word": "calmly", "meaning": "শান্তভাবে", "pronunciation": "কাল্মলি" },
+    { "word": "truly", "meaning": "সত্যিই", "pronunciation": "ট্রুলি" },
+    { "word": "honestly", "meaning": "সততার সাথে", "pronunciation": "অনেস্টলি" },
+    { "word": "beautiful", "meaning": "সুন্দর", "pronunciation": "বিউটিফুল" },
+    { "word": "happy", "meaning": "খুশি", "pronunciation": "হ্যাপি" },
+    { "word": "sad", "meaning": "দুঃখী", "pronunciation": "স্যাড" },
+    { "word": "angry", "meaning": "রাগান্বিত", "pronunciation": "অ্যাংরি" },
+    { "word": "brave", "meaning": "সাহসী", "pronunciation": "ব্রেভ" },
+    { "word": "smart", "meaning": "স্মার্ট", "pronunciation": "স্মার্ট" },
+    { "word": "lazy", "meaning": "অলস", "pronunciation": "লেজি" },
+    { "word": "strong", "meaning": "শক্তিশালী", "pronunciation": "স্ট্রং" },
+    { "word": "weak", "meaning": "দুর্বল", "pronunciation": "উইক" },
+    { "word": "big", "meaning": "বড়", "pronunciation": "বিগ" },
+    { "word": "small", "meaning": "ছোট", "pronunciation": "স্মল" },
+    { "word": "fast", "meaning": "দ্রুত", "pronunciation": "ফাস্ট" },
+    { "word": "slow", "meaning": "ধীর", "pronunciation": "স্লো" },
+    { "word": "young", "meaning": "যুবা", "pronunciation": "ইয়াং" },
+    { "word": "old", "meaning": "বৃদ্ধ", "pronunciation": "ওল্ড" },
+    { "word": "in", "meaning": "ভিতরে", "pronunciation": "ইন" },
+    { "word": "on", "meaning": "উপর", "pronunciation": "অন" },
+    { "word": "under", "meaning": "নিচে", "pronunciation": "আন্ডার" },
+    { "word": "over", "meaning": "উপর দিয়ে", "pronunciation": "ওভার" },
+    { "word": "between", "meaning": "মধ্যে", "pronunciation": "বিটুইন" },
+    { "word": "behind", "meaning": "পিছনে", "pronunciation": "বিহাইন্ড" },
+    { "word": "in front of", "meaning": "সামনে", "pronunciation": "ইন ফ্রন্ট অফ" },
+    { "word": "next to", "meaning": "পাশে", "pronunciation": "নেক্সট টু" },
+    { "word": "beside", "meaning": "পাশে", "pronunciation": "বিসাইড" },
+    { "word": "above", "meaning": "উপরে", "pronunciation": "অ্যাবাভ" },
+    { "word": "below", "meaning": "নিচে", "pronunciation": "বিলো" },
+    { "word": "around", "meaning": "চারপাশে", "pronunciation": "অ্যারাউন্ড" },
+    { "word": "through", "meaning": "মাধ্যমে", "pronunciation": "থ্রু" },
+    { "word": "towards", "meaning": "দিকে", "pronunciation": "টুওয়ার্ডস" },
+    { "word": "with", "meaning": "সঙ্গে", "pronunciation": "উইথ" },
+    
 ];
-const abstractNouns = [
-  { "word": "love", "meaning": "ভালবাসা", "pronunciation": "লাভ" },
-  { "word": "happiness", "meaning": "সুখ", "pronunciation": "হ্যাপিনেস" },
-  { "word": "anger", "meaning": "রাগ", "pronunciation": "অ্যাংগার" },
-  { "word": "fear", "meaning": "ভয়", "pronunciation": "ফিয়ার" },
-  { "word": "freedom", "meaning": "স্বাধীনতা", "pronunciation": "ফ্রিডম" },
-  { "word": "justice", "meaning": "ন্যায়বিচার", "pronunciation": "জাস্টিস" },
-  { "word": "truth", "meaning": "সত্য", "pronunciation": "ট্রুথ" },
-  { "word": "peace", "meaning": "শান্তি", "pronunciation": "পিস" },
-  { "word": "courage", "meaning": "সাহস", "pronunciation": "কারেজ" },
-  { "word": "friendship", "meaning": "বন্ধুত্ব", "pronunciation": "ফ্রেন্ডশিপ" },
-  { "word": "honesty", "meaning": "সততা", "pronunciation": "অন্যেস্টি" },
-  { "word": "kindness", "meaning": "দয়া", "pronunciation": "কাইন্ডনেস" },
-  { "word": "sadness", "meaning": "দুঃখ", "pronunciation": "স্যাডনেস" },
-  { "word": "hope", "meaning": "আশা", "pronunciation": "হোপ" },
-  { "word": "wisdom", "meaning": "জ্ঞান", "pronunciation": "উইজডম" },
-  { "word": "patience", "meaning": "ধৈর্য", "pronunciation": "পেশেন্স" },
-  { "word": "strength", "meaning": "শক্তি", "pronunciation": "স্ট্রেংথ" },
-  { "word": "beauty", "meaning": "সৌন্দর্য", "pronunciation": "বিউটি" },
-  { "word": "knowledge", "meaning": "জ্ঞান", "pronunciation": "নলেজ" },
-  { "word": "faith", "meaning": "বিশ্বাস", "pronunciation": "ফেইথ" },
-  { "word": "charity", "meaning": "দান", "pronunciation": "চ্যারিটি" },
-  { "word": "honor", "meaning": "সম্মান", "pronunciation": "অনার" },
-  { "word": "grief", "meaning": "শোক", "pronunciation": "গ্রীফ" },
-  { "word": "success", "meaning": "সফলতা", "pronunciation": "সাকসেস" },
-  { "word": "failure", "meaning": "ব্যর্থতা", "pronunciation": "ফেলিউর" },
-  { "word": "pride", "meaning": "গর্ব", "pronunciation": "প্রাইড" },
-  { "word": "loyalty", "meaning": "বিশ্বস্ততা", "pronunciation": "লয়ালটি" },
-  { "word": "honor", "meaning": "সম্মান", "pronunciation": "অনার" },
-  { "word": "dream", "meaning": "স্বপ্ন", "pronunciation": "ড্রিম" },
-  { "word": "comfort", "meaning": "সান্ত্বনা", "pronunciation": "কমফর্ট" },
-  { "word": "trust", "meaning": "বিশ্বাস", "pronunciation": "ট্রাস্ট" },
-  { "word": "greed", "meaning": "লোভ", "pronunciation": "গ্রিড" },
-  { "word": "love", "meaning": "ভালবাসা", "pronunciation": "লাভ" },
-  { "word": "jealousy", "meaning": "ঈর্ষা", "pronunciation": "জেলাসি" },
-  { "word": "compassion", "meaning": "সহানুভূতি", "pronunciation": "কম্প্যাশন" },
-  { "word": "despair", "meaning": "নিরাশা", "pronunciation": "ডেসপেয়ার" },
-  { "word": "humility", "meaning": "নম্রতা", "pronunciation": "হিউমিলিটি" }
-];
-const Words = words.concat(abstractNouns);
+
+
+
 
 function StartTest() {
     document.getElementById('quiz-section').style.display = 'block';
@@ -233,3 +227,21 @@ function viewProgress() {
     let progressMessage = `You have answered ${totalQuestions} questions and got ${correctAnswers} correct.`;
     alert(progressMessage);
 }
+
+
+function showFeedback(isCorrect) {
+    totalQuestions++; // Increment total questions answered
+    let feedback = document.getElementById('feedback');
+    if (isCorrect) {
+        correctAnswers++; // Increment correct answers if correct
+        feedback.innerText = "Correct!";
+        feedback.style.color = "green";
+    } else {
+        feedback.innerText = `Wrong! The correct answer is: ${document.querySelector('.option').innerText}`;
+        feedback.style.color = "red";
+    }
+    setTimeout(generateQuestion, 2000);
+}
+
+
+
