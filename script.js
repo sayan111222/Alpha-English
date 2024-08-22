@@ -117,6 +117,158 @@ let words = [
     { "word": "through", "meaning": "মাধ্যমে", "pronunciation": "থ্রু" },
     { "word": "towards", "meaning": "দিকে", "pronunciation": "টুওয়ার্ডস" },
     { "word": "with", "meaning": "সঙ্গে", "pronunciation": "উইথ" },
+    { "word": "and", "meaning": "এবং", "pronunciation": "অ্যান্ড" },
+    { "word": "but", "meaning": "কিন্তু", "pronunciation": "বাট" },
+    { "word": "or", "meaning": "অথবা", "pronunciation": "অর" },
+    { "word": "because", "meaning": "কারণ", "pronunciation": "বিকজ" },
+    { "word": "so", "meaning": "তাই", "pronunciation": "সো" },
+    { "word": "although", "meaning": "যদিও", "pronunciation": "অলদো" },
+    { "word": "if", "meaning": "যদি", "pronunciation": "ইফ" },
+    { "word": "since", "meaning": "যেহেতু", "pronunciation": "সিন্স" },
+    { "word": "while", "meaning": "যখন", "pronunciation": "হোয়াইল" },
+    { "word": "until", "meaning": "যতক্ষণ না", "pronunciation": "আনটিল" },
+    { "word": "unless", "meaning": "যদি না", "pronunciation": "আনলেস" },
+    { "word": "whether", "meaning": "যদি", "pronunciation": "হোয়েদার" },
+    { "word": "yet", "meaning": "তবুও", "pronunciation": "ইয়েট" },
+    { "word": "either", "meaning": "অথবা", "pronunciation": "আইদার" },
+    { "word": "neither", "meaning": "না এই, না ঐ", "pronunciation": "নিদার" },
+    { "word": "wow", "meaning": "বাহ", "pronunciation": "ওয়াও" },
+    { "word": "ouch", "meaning": "আহ", "pronunciation": "আউচ" },
+    { "word": "oops", "meaning": "উফ", "pronunciation": "উপস" },
+    { "word": "hey", "meaning": "এই", "pronunciation": "হে" },
+    { "word": "oh", "meaning": "ওহ", "pronunciation": "ও" },
+    { "word": "ah", "meaning": "আহা", "pronunciation": "আ" },
+    { "word": "alas", "meaning": "হায়", "pronunciation": "অ্যালাস" },
+    { "word": "hurrah", "meaning": "হুরrah", "pronunciation": "হুরrah" },
+    { "word": "bravo", "meaning": "শাবাশ", "pronunciation": "ব্রাভো" },
+    { "word": "ugh", "meaning": "ধুর", "pronunciation": "আগ" },
+    { "word": "yikes", "meaning": "বিপদ", "pronunciation": "ইয়াইকস" },
+    { "word": "shh", "meaning": "চুপ", "pronunciation": "শ্" },
+    { "word": "yay", "meaning": "ইয়েহ", "pronunciation": "ইয়েহ" },
+    { "word": "hurray", "meaning": "হুরrah", "pronunciation": "হুরrah" },
+    { "word": "hmm", "meaning": "হুম", "pronunciation": "হুম" },
+    { "word": "head", "meaning": "মাথা", "pronunciation": "হেড" },
+    { "word": "eye", "meaning": "চোখ", "pronunciation": "আই" },
+    { "word": "ear", "meaning": "কান", "pronunciation": "ইয়ার" },
+    { "word": "nose", "meaning": "নাক", "pronunciation": "নোজ" },
+    { "word": "mouth", "meaning": "মুখ", "pronunciation": "মাউথ" },
+    { "word": "hand", "meaning": "হাত", "pronunciation": "হ্যান্ড" },
+    { "word": "leg", "meaning": "পা", "pronunciation": "লেগ" },
+    { "word": "foot", "meaning": "পায়ের পাতা", "pronunciation": "ফুট" },
+    { "word": "heart", "meaning": "হৃদয়", "pronunciation": "হার্ট" },
+    { "word": "brain", "meaning": "মস্তিষ্ক", "pronunciation": "ব্রেইন" },
+    { "word": "stomach", "meaning": "পেট", "pronunciation": "স্টমাক" },
+    { "word": "arm", "meaning": "বাহু", "pronunciation": "আর্ম" },
+    { "word": "finger", "meaning": "আঙুল", "pronunciation": "ফিঙ্গার" },
+    { "word": "tooth", "meaning": "দাঁত", "pronunciation": "টুথ" },
+    { "word": "skin", "meaning": "ত্বক", "pronunciation": "স্কিন" },
+    { "word": "bone", "meaning": "হাড়", "pronunciation": "বোন" },
+    { "word": "blood", "meaning": "রক্ত", "pronunciation": "ব্লাড" },
+    { "word": "lung", "meaning": "ফুসফুস", "pronunciation": "লাং" },
+    { "word": "kidney", "meaning": "বৃক্ক", "pronunciation": "কিডনি" },
+    { "word": "liver", "meaning": "যকৃত", "pronunciation": "লিভার" },
+    { "word": "kind", "meaning": "দয়ালু", "pronunciation": "কাইন্ড" },
+    { "word": "honest", "meaning": "সৎ", "pronunciation": "অনেস্ট" },
+    { "word": "brave", "meaning": "সাহসী", "pronunciation": "ব্রেভ" },
+    { "word": "patient", "meaning": "ধৈর্যশীল", "pronunciation": "পেশেন্ট" },
+    { "word": "humble", "meaning": "নম্র", "pronunciation": "হাম্বল" },
+    { "word": "polite", "meaning": "ভদ্র", "pronunciation": "পোলাইট" },
+    { "word": "generous", "meaning": "উদার", "pronunciation": "জেনারাস" },
+    { "word": "intelligent", "meaning": "বুদ্ধিমান", "pronunciation": "ইন্টেলিজেন্ট" },
+    { "word": "loyal", "meaning": "বিশ্বস্ত", "pronunciation": "লয়াল" },
+    { "word": "friendly", "meaning": "বন্ধুভাবাপন্ন", "pronunciation": "ফ্রেন্ডলি" },
+    { "word": "responsible", "meaning": "দায়িত্বশীল", "pronunciation": "রেস্পন্সিবল" },
+    { "word": "forgiving", "meaning": "ক্ষমাশীল", "pronunciation": "ফরগিভিং" },
+    { "word": "creative", "meaning": "সৃজনশীল", "pronunciation": "ক্রিয়েটিভ" },
+    { "word": "optimistic", "meaning": "আশাবাদী", "pronunciation": "অপটিমিস্টিক" },
+    { "word": "hardworking", "meaning": "পরিশ্রমী", "pronunciation": "হার্ডওয়ার্কিং" },
+    { "word": "selfless", "meaning": "নিঃস্বার্থ", "pronunciation": "সেল্ফলেস" },
+    { "word": "ambitious", "meaning": "উদ্যমী", "pronunciation": "অ্যাম্বিশাস" },
+    { "word": "thoughtful", "meaning": "চিন্তাশীল", "pronunciation": "থটফুল" },
+    { "word": "cheerful", "meaning": "প্রফুল্ল", "pronunciation": "চিয়ারফুল" },
+    { "word": "compassionate", "meaning": "সহানুভূতিশীল", "pronunciation": "কমপ্যাশনেট" },
+    { "word": "human", "meaning": "মানব", "pronunciation": "হিউম্যান" },
+    { "word": "society", "meaning": "সমাজ", "pronunciation": "সোসাইটি" },
+    { "word": "civilization", "meaning": "সভ্যতা", "pronunciation": "সিভিলাইজেশন" },
+    { "word": "culture", "meaning": "সংস্কৃতি", "pronunciation": "কালচার" },
+    { "word": "community", "meaning": "সম্প্রদায়", "pronunciation": "কমিউনিটি" },
+    { "word": "race", "meaning": "জাতি", "pronunciation": "রেস" },
+    { "word": "ethnicity", "meaning": "জাতিগত পরিচয়", "pronunciation": "এথনিসিটি" },
+    { "word": "humanity", "meaning": "মানবতা", "pronunciation": "হিউম্যানিটি" },
+    { "word": "freedom", "meaning": "স্বাধীনতা", "pronunciation": "ফ্রিডম" },
+    { "word": "justice", "meaning": "ন্যায়বিচার", "pronunciation": "জাস্টিস" },
+    { "word": "equality", "meaning": "সমতা", "pronunciation": "ইক্যুয়ালিটি" },
+    { "word": "peace", "meaning": "শান্তি", "pronunciation": "পিস" },
+    { "word": "brotherhood", "meaning": "ভ্রাতৃত্ব", "pronunciation": "ব্রাদারহুড" },
+    { "word": "charity", "meaning": "দাতব্য", "pronunciation": "চারিটি" },
+    { "word": "diversity", "meaning": "বৈচিত্র্য", "pronunciation": "ডাইভারসিটি" },
+    { "word": "democracy", "meaning": "গণতন্ত্র", "pronunciation": "ডেমোক্র্যাসি" },
+    { "word": "human rights", "meaning": "মানবাধিকার", "pronunciation": "হিউম্যান রাইটস" },
+    { "word": "dignity", "meaning": "মর্যাদা", "pronunciation": "ডিগনিটি" },
+    { "word": "cooperation", "meaning": "সহযোগিতা", "pronunciation": "কোঅপারেশন" },
+    { "word": "compassion", "meaning": "সহানুভূতি", "pronunciation": "কমপ্যাশন" },
+    { "word": "father", "meaning": "বাবা", "pronunciation": "ফাদার" },
+    { "word": "mother", "meaning": "মা", "pronunciation": "মাদার" },
+    { "word": "brother", "meaning": "ভাই", "pronunciation": "ব্রাদার" },
+    { "word": "sister", "meaning": "বোন", "pronunciation": "সিস্টার" },
+    { "word": "grandfather", "meaning": "দাদু", "pronunciation": "গ্র্যান্ডফাদার" },
+    { "word": "grandmother", "meaning": "ঠাকুরমা", "pronunciation": "গ্র্যান্ডমাদার" },
+    { "word": "uncle", "meaning": "কাকা / মামা", "pronunciation": "আঙ্কল" },
+    { "word": "aunt", "meaning": "কাকিমা / মাসি", "pronunciation": "আন্ট" },
+    { "word": "cousin", "meaning": "চাচাতো ভাই / বোন", "pronunciation": "কাজিন" },
+    { "word": "nephew", "meaning": "ভাইপো", "pronunciation": "নেফিউ" },
+    { "word": "niece", "meaning": "ভাইঝি", "pronunciation": "নিজ" },
+    { "word": "husband", "meaning": "স্বামী", "pronunciation": "হাজব্যান্ড" },
+    { "word": "wife", "meaning": "স্ত্রী", "pronunciation": "ওয়াইফ" },
+    { "word": "son", "meaning": "ছেলে", "pronunciation": "সন" },
+    { "word": "daughter", "meaning": "মেয়ে", "pronunciation": "ডটার" },
+    { "word": "father-in-law", "meaning": "শ্বশুর", "pronunciation": "ফাদার-ইন-ল" },
+    { "word": "mother-in-law", "meaning": "শাশুড়ি", "pronunciation": "মাদার-ইন-ল" },
+    { "word": "brother-in-law", "meaning": "ভাই-জামাই", "pronunciation": "ব্রাদার-ইন-ল" },
+    { "word": "sister-in-law", "meaning": "বোন-জামাই", "pronunciation": "সিস্টার-ইন-ল" },
+    { "word": "grandson", "meaning": "নাতি", "pronunciation": "গ্র্যান্ডসন" },
+    { "word": "granddaughter", "meaning": "নাতনি", "pronunciation": "গ্র্যান্ডডটার" },
+    { "word": "shirt", "meaning": "শার্ট", "pronunciation": "শার্ট" },
+    { "word": "pants", "meaning": "প্যান্ট", "pronunciation": "প্যান্টস" },
+    { "word": "dress", "meaning": "পোশাক", "pronunciation": "ড্রেস" },
+    { "word": "skirt", "meaning": "স্কার্ট", "pronunciation": "স্কার্ট" },
+    { "word": "jacket", "meaning": "জ্যাকেট", "pronunciation": "জ্যাকেট" },
+    { "word": "suit", "meaning": "সুট", "pronunciation": "সুট" },
+    { "word": "tie", "meaning": "টাই", "pronunciation": "টাই" },
+    { "word": "saree", "meaning": "শাড়ি", "pronunciation": "সারি" },
+    { "word": "kurta", "meaning": "কুর্তা", "pronunciation": "কুর্তা" },
+    { "word": "blouse", "meaning": "ব্লাউজ", "pronunciation": "ব্লাউজ" },
+    { "word": "shoes", "meaning": "জুতো", "pronunciation": "শুজ" },
+    { "word": "sandals", "meaning": "স্যান্ডেল", "pronunciation": "স্যান্ডালস" },
+    { "word": "hat", "meaning": "টুপি", "pronunciation": "হ্যাট" },
+    { "word": "scarf", "meaning": "স্কার্ফ", "pronunciation": "স্কার্ফ" },
+    { "word": "gloves", "meaning": "দস্তানা", "pronunciation": "গ্লোভস" },
+    { "word": "belt", "meaning": "বেল্ট", "pronunciation": "বেল্ট" },
+    { "word": "shorts", "meaning": "ছোট প্যান্ট", "pronunciation": "শর্টস" },
+    { "word": "jeans", "meaning": "জিন্স", "pronunciation": "জিন্স" },
+    { "word": "t-shirt", "meaning": "টি-শার্ট", "pronunciation": "টি-শার্ট" },
+    { "word": "socks", "meaning": "মোজা", "pronunciation": "সকস" },
+    { "word": "school", "meaning": "স্কুল", "pronunciation": "স্কুল" },
+    { "word": "college", "meaning": "কলেজ", "pronunciation": "কলেজ" },
+    { "word": "university", "meaning": "বিশ্ববিদ্যালয়", "pronunciation": "ইউনিভার্সিটি" },
+    { "word": "teacher", "meaning": "শিক্ষক", "pronunciation": "টিচার" },
+    { "word": "student", "meaning": "ছাত্র", "pronunciation": "স্টুডেন্ট" },
+    { "word": "classroom", "meaning": "শ্রেণীকক্ষ", "pronunciation": "ক্লাসরুম" },
+    { "word": "homework", "meaning": "বাড়ির কাজ", "pronunciation": "হোমওয়ার্ক" },
+    { "word": "exam", "meaning": "পরীক্ষা", "pronunciation": "এক্সাম" },
+    { "word": "subject", "meaning": "বিষয়", "pronunciation": "সাবজেক্ট" },
+    { "word": "book", "meaning": "বই", "pronunciation": "বুক" },
+    { "word": "notebook", "meaning": "নোটবই", "pronunciation": "নোটবুক" },
+    { "word": "pen", "meaning": "কলম", "pronunciation": "পেন" },
+    { "word": "pencil", "meaning": "পেন্সিল", "pronunciation": "পেন্সিল" },
+    { "word": "blackboard", "meaning": "কালো বোর্ড", "pronunciation": "ব্ল্যাকবোর্ড" },
+    { "word": "library", "meaning": "গ্রন্থাগার", "pronunciation": "লাইব্রেরি" },
+    { "word": "scholarship", "meaning": "বৃত্তি", "pronunciation": "স্কলারশিপ" },
+    { "word": "lecture", "meaning": "বক্তৃতা", "pronunciation": "লেকচার" },
+    { "word": "assignment", "meaning": "নির্ধারিত কাজ", "pronunciation": "অ্যাসাইনমেন্ট" },
+    { "word": "degree", "meaning": "ডিগ্রি", "pronunciation": "ডিগ্রি" },
+    { "word": "certificate", "meaning": "সনদ", "pronunciation": "সার্টিফিকেট" },
+    
     
 ];
 
@@ -242,6 +394,47 @@ function showFeedback(isCorrect) {
     }
     setTimeout(generateQuestion, 2000);
 }
+
+
+
+let totalLikes = 0;
+
+document.getElementById('like-button').addEventListener('click', function() {
+    totalLikes++;
+    document.getElementById('total-likes').innerText = totalLikes;
+});
+
+let currentWordIndex = 0;
+
+function displayWord(index) {
+    const word = words[index];
+    document.getElementById('practice-word').innerText = word.word;
+    document.getElementById('practice-meaning').innerText = `Meaning: ${word.meaning}`;
+    document.getElementById('practice-pronunciation').innerText = `Pronunciation: ${word.pronunciation}`;
+}
+
+function nextWord() {
+    if (currentWordIndex < words.length - 1) {
+        currentWordIndex++;
+        displayWord(currentWordIndex);
+    } else {
+        alert("This is the last word.");
+    }
+}
+
+function previousWord() {
+    if (currentWordIndex > 0) {
+        currentWordIndex--;
+        displayWord(currentWordIndex);
+    } else {
+        alert("You're already at the first word.");
+    }
+}
+
+// Initial display of the first word
+displayWord(currentWordIndex);
+
+
 
 
 
