@@ -337,27 +337,28 @@ function viewProgress() {
 
 function generateQuestion() {
     let word = words[Math.floor(Math.random() * words.length)];
-    // Display the question with the word and its pronunciation
-    document.getElementById('question').innerText = `What is the Bengali meaning of "${word.word} (${word.pronunciation})"?`;
+    let correctAnswer = word.meaning;  // Store the correct answer
 
-    // Select the correct option index
+    document.getElementById('question').innerText = `What is the Bengali meaning of "${word.word} (${word.pronunciation})"?`;
+    
     let correctOption = Math.floor(Math.random() * 4);
     let options = document.getElementsByClassName('option');
     
     for (let i = 0; i < 4; i++) {
         if (i === correctOption) {
-            options[i].innerText = word.meaning;
-            options[i].onclick = () => showFeedback(true);
+            options[i].innerText = correctAnswer;
+            options[i].onclick = () => showFeedback(true, correctAnswer);
         } else {
             let incorrectWord;
             do {
                 incorrectWord = words[Math.floor(Math.random() * words.length)];
             } while (incorrectWord.meaning === word.meaning);
             options[i].innerText = incorrectWord.meaning;
-            options[i].onclick = () => showFeedback(false);
+            options[i].onclick = () => showFeedback(false, correctAnswer);
         }
     }
 }
+
 
 
 let totalQuestions = 0;
@@ -381,19 +382,22 @@ function viewProgress() {
 }
 
 
-function showFeedback(isCorrect) {
+function showFeedback(isCorrect, correctAnswer) {
     totalQuestions++; // Increment total questions answered
     let feedback = document.getElementById('feedback');
+    
     if (isCorrect) {
         correctAnswers++; // Increment correct answers if correct
         feedback.innerText = "Correct!";
         feedback.style.color = "green";
     } else {
-        feedback.innerText = `Wrong! The correct answer is: ${document.querySelector('.option').innerText}`;
+        feedback.innerText = `Wrong! The correct answer is: ${correctAnswer}`;
         feedback.style.color = "red";
     }
+    
     setTimeout(generateQuestion, 2000);
 }
+
 
 
 
