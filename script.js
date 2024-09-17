@@ -1026,62 +1026,9 @@ document.getElementById('like-button').addEventListener('click', function() {
     document.getElementById('total-likes').innerText = totalLikes;
 });
 
-let currentWordIndex = 0;
-
-function displayWord(index) {
-    const word = words[index];
-    document.getElementById('practice-word').innerText = word.word;
-    document.getElementById('practice-meaning').innerText = `Meaning: ${word.meaning}`;
-    document.getElementById('practice-pronunciation').innerText = `Pronunciation: ${word.pronunciation}`;
-}
-
-function nextWord() {
-    if (currentWordIndex < words.length - 1) {
-        currentWordIndex++;
-        displayWord(currentWordIndex);
-    } else {
-        alert("This is the last word.");
-    }
-}
-
-function previousWord() {
-    if (currentWordIndex > 0) {
-        currentWordIndex--;
-        displayWord(currentWordIndex);
-    } else {
-        alert("You're already at the first word.");
-    }
-}
-
-// Initial display of the first word
-displayWord(currentWordIndex);
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if there's a saved like count in localStorage
-    const savedLikes = localStorage.getItem('likeCount');
-    
-    // Initialize the like count either from localStorage or start from 0
-    let likeCount = savedLikes ? parseInt(savedLikes) : 0;
-    
-    // Display the like count
-    document.getElementById('total-likes').textContent = likeCount;
-
-    // Event listener for the like button
-    document.getElementById('like-button').addEventListener('click', function() {
-        likeCount++; // Increment the like count
-        document.getElementById('total-likes').textContent = likeCount; // Update the displayed count
-        
-        // Save the updated count to localStorage
-        localStorage.setItem('likeCount', likeCount);
-    });
-});
-
-// shufle
-
-let seenWords = []; // Array to store the indexes of words that have been seen
-let shuffleMode = true; // Set shuffle mode by default
+let currentWordIndex = 0; // To track the current position in the shuffled array
+let shuffledIndexes = []; // Array to store the order of shuffled word indexes
+let seenWords = []; // Array to track the seen words
 
 // Shuffle Array Helper Function
 function shuffleArray(array) {
@@ -1091,23 +1038,13 @@ function shuffleArray(array) {
     }
 }
 
-// Function to get the next word in practice mode
-function nextWord() {
-    if (seenWords.length === words.length) {
-        alert("You have practiced all the words!");
-        return;
-    }
-    
-    let randomIndex;
-    do {
-        randomIndex = Math.floor(Math.random() * words.length);
-    } while (seenWords.includes(randomIndex)); // Ensure we don't repeat words
-
-    seenWords.push(randomIndex); // Mark the word as seen
-    displayWord(randomIndex); // Display the word
+// Function to initialize shuffled word order
+function initShuffle() {
+    shuffledIndexes = Array.from({ length: words.length }, (_, i) => i);
+    shuffleArray(shuffledIndexes); // Shuffle the index order
 }
 
-// Function to display a word
+// Function to display the current word
 function displayWord(index) {
     const word = words[index];
     document.getElementById('practice-word').innerText = word.word;
@@ -1115,57 +1052,35 @@ function displayWord(index) {
     document.getElementById('practice-pronunciation').innerText = `Pronunciation: ${word.pronunciation}`;
 }
 
-// Initialize by displaying the first word in shuffled mode
+// Function to get the next word
+function nextWord() {
+    if (currentWordIndex < shuffledIndexes.length - 1) {
+        currentWordIndex++;
+        displayWord(shuffledIndexes[currentWordIndex]);
+        seenWords.push(shuffledIndexes[currentWordIndex]); // Keep track of the seen words
+    } else {
+        alert("You have practiced all the words!");
+    }
+}
+
+// Function to get the previous word
+function previousWord() {
+    if (currentWordIndex > 0) {
+        currentWordIndex--;
+        displayWord(shuffledIndexes[currentWordIndex]);
+    } else {
+        alert("You're already at the first word.");
+    }
+}
+
+// Initialize by displaying the first shuffled word
 document.addEventListener('DOMContentLoaded', function() {
-    if (shuffleMode) {
-        shuffleArray(words);
-    }
-    nextWord(); // Start practice
+    initShuffle(); // Initialize shuffled order
+    displayWord(shuffledIndexes[currentWordIndex]); // Display the first word
 });
-let seenQuizWords = []; // Array to store indexes of quiz questions that have been seen
 
-function generateQuestion() {
-    if (seenQuizWords.length === words.length) {
-        alert("You have answered all questions in this session!");
-        return;
-    }
-
-    let randomIndex;
-    do {
-        randomIndex = Math.floor(Math.random() * words.length);
-    } while (seenQuizWords.includes(randomIndex)); // Ensure no repetition
-
-    seenQuizWords.push(randomIndex); // Mark the word as seen
-    let word = words[randomIndex];
-    let correctAnswer = word.meaning;
-
-    document.getElementById('question').innerText = `What is the Bengali meaning of "${word.word} (${word.pronunciation})"?`;
-    
-    let correctOption = Math.floor(Math.random() * 4);
-    let options = document.getElementsByClassName('option');
-
-    for (let i = 0; i < 4; i++) {
-        if (i === correctOption) {
-            options[i].innerText = correctAnswer;
-            options[i].onclick = () => showFeedback(true, correctAnswer);
-        } else {
-            let incorrectWord;
-            do {
-                incorrectWord = words[Math.floor(Math.random() * words.length)];
-            } while (incorrectWord.meaning === word.meaning);
-            options[i].innerText = incorrectWord.meaning;
-            options[i].onclick = () => showFeedback(false, correctAnswer);
-        }
-    }
-}
-function startNewPracticeSession() {
-    seenWords = []; // Reset seen words
-    nextWord(); // Start practicing from a new set
-}
-
-function startNewQuizSession() {
-    seenQuizWords = []; // Reset seen quiz words
-    generateQuestion(); // Start a new quiz
-}
+// Button listeners for next and previous
+document.getElementById('next-button').addEventListener('click', nextWord);
+document.getElementById('previous-button').addEventListener('click', previousWord);
 
 
